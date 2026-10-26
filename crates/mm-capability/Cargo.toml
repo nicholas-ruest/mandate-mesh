@@ -1,0 +1,14 @@
+[package]
+name="mm-capability"
+version.workspace=true
+edition.workspace=true
+rust-version.workspace=true
+license.workspace=true
+
+[dependencies]
+mm-types={path="../mm-types"}
+mm-agent={path="../mm-agent"}
+mm-errors={path="../mm-errors"}
+
+[lints]
+workspace=true

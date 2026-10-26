@@ -1,0 +1,17 @@
+[package]
+name="mm-contract"
+version.workspace=true
+edition.workspace=true
+rust-version.workspace=true
+license.workspace=true
+
+[dependencies]
+mm-types={path="../mm-types"}
+mm-team={path="../mm-team"}
+mm-errors={path="../mm-errors"}
+sha2={workspace=true}
+hex={workspace=true}
+serde_json={workspace=true}
+
+[lints]
+workspace=true

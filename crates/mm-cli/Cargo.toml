@@ -1,0 +1,17 @@
+[package]
+name="mm-cli"
+version.workspace=true
+edition.workspace=true
+rust-version.workspace=true
+license.workspace=true
+
+[dependencies]
+mm-api={path="../mm-api"}
+mm-config={path="../mm-config"}
+mm-errors={path="../mm-errors"}
+tokio={workspace=true}
+clap={workspace=true}
+tracing-subscriber={workspace=true}
+
+[lints]
+workspace=true

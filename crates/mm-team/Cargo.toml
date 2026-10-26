@@ -1,0 +1,14 @@
+[package]
+name="mm-team"
+version.workspace=true
+edition.workspace=true
+rust-version.workspace=true
+license.workspace=true
+
+[dependencies]
+mm-agent={path="../mm-agent"}
+mm-types={path="../mm-types"}
+mm-errors={path="../mm-errors"}
+
+[lints]
+workspace=true

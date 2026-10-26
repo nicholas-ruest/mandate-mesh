@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "source_sha": "CI_REBIND_REQUIRED",
+  "generated_at": "2026-10-26T02:05:42.698Z",
+  "launch_mode": "local running React/Vite plus real Axum backend",
+  "test_namespace": "mandate-mesh-e2e",
+  "dependencies": {
+    "rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+    "node": "v20.20.2",
+    "npm": "10.8.2",
+    "ruvector_core": "2.4.0",
+    "rvf_runtime": "0.3.2",
+    "regorus": "0.13.0"
+  },
+  "commands": [
+    {
+      "command": "cargo fmt --all -- --check",
+      "exit_code": 0
+    },
+    {
+      "command": "cargo clippy --locked --workspace --all-targets --all-features -- -D warnings",
+      "exit_code": 0
+    },
+    {
+      "command": "cargo test --locked --workspace --all-features",
+      "exit_code": 0
+    },
+    {
+      "command": "cargo deny check",
+      "exit_code": 0
+    },
+    {
+      "command": "npm audit && npm run typecheck && npm run lint && npm test && npm run build",
+      "exit_code": 0
+    },
+    {
+      "command": "scripts/benchmark.sh",
+      "exit_code": 0
+    },
+    {
+      "command": "npx playwright test",
+      "exit_code": 0,
+      "result": "6 passed"
+    },
+    {
+      "command": "scripts/restart-journey.sh",
+      "exit_code": 0,
+      "result": "exact ID restored"
+    }
+  ],
+  "artifacts": {
+    "evidence/prototype/desktop.png": "5add496f015a6990515fa5eab5f3bd488f6a7e5689d6f3b01b5ca7f0a6e544bd",
+    "evidence/prototype/mobile.png": "41988e61d9b41b2c47cd39c36b5b1906446c9f75849a98439a5271824c2eed0e",
+    "evidence/benchmark.json": "07e0cf976a14b79e321f84210566ac8bd30d86424344aaddbe459011b9271f39",
+    "evidence/verify.log": "06417a08419b34a729a3cf81e52d479a0c3d530c9d74d9c5908f868f156c342b"
+  },
+  "synthetic_data": "deterministic Atlas, Prism and Forge agents",
+  "external_gaps": [
+    "no cloud deployment performed; authorization not granted"
+  ],
+  "security_exception": "RUSTSEC-2025-0141 unmaintained-only transitive bincode via RuVector; no safe upgrade"
+}

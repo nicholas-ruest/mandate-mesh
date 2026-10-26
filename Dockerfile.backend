@@ -1,0 +1,8 @@
+FROM rust:1.99-bookworm AS build
+WORKDIR /app
+COPY . .
+RUN cargo build --locked --release -p mm-cli
+FROM debian:bookworm-slim
+COPY --from=build /app/target/release/mm-cli /usr/local/bin/mandate-mesh
+EXPOSE 18080
+CMD ["mandate-mesh"]
