@@ -1,0 +1,15 @@
+[package]
+name="mm-recall"
+version.workspace=true
+edition.workspace=true
+rust-version.workspace=true
+license.workspace=true
+
+[dependencies]
+mm-ruvector={path="../mm-ruvector"}
+mm-embedding={path="../mm-embedding"}
+mm-types={path="../mm-types"}
+mm-errors={path="../mm-errors"}
+
+[lints]
+workspace=true

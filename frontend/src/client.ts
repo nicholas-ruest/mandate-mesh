@@ -1,0 +1,4 @@
+export type Mandate={id:string;objective:{text:string;sensitivity:string};tasks:{id:string;role:string}[];agents:{id:string;name:string;score:number}[];risk:number;contract_hash:string;status:string;correlation_id:string};
+const headers=(token:string)=>({Authorization:'Bearer '+token,'Content-Type':'application/json','X-Correlation-Id':crypto.randomUUID()});
+export async function createMandate(token:string,objective:string,sensitivity:string):Promise<Mandate>{const r=await fetch('http://127.0.0.1:18080/v1/mandates',{method:'POST',headers:headers(token),body:JSON.stringify({objective,sensitivity})});const b=await r.json();if(!r.ok)throw new Error(b.message??'Request failed');return b}
+export async function listMandates(token:string):Promise<Mandate[]>{const r=await fetch('http://127.0.0.1:18080/v1/mandates',{headers:headers(token)});if(!r.ok)throw new Error('Could not load audit');return r.json()}

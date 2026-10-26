@@ -1,0 +1,14 @@
+[package]
+name="mm-policy"
+version.workspace=true
+edition.workspace=true
+rust-version.workspace=true
+license.workspace=true
+
+[dependencies]
+mm-regorus={path="../mm-regorus"}
+mm-types={path="../mm-types"}
+mm-errors={path="../mm-errors"}
+
+[lints]
+workspace=true

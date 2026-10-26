@@ -1,0 +1,17 @@
+[package]
+name="mm-optimizer"
+version.workspace=true
+edition.workspace=true
+rust-version.workspace=true
+license.workspace=true
+
+[dependencies]
+mm-team={path="../mm-team"}
+mm-types={path="../mm-types"}
+mm-errors={path="../mm-errors"}
+
+[lints]
+workspace=true
+
+[dev-dependencies]
+mm-agent={path="../mm-agent"}

@@ -1,0 +1,12 @@
+[package]
+name="mm-config"
+version.workspace=true
+edition.workspace=true
+rust-version.workspace=true
+license.workspace=true
+
+[dependencies]
+mm-errors={path="../mm-errors"}
+
+[lints]
+workspace=true
